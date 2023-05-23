@@ -195,8 +195,6 @@ $stmt->bindParam(':date_fin', $result['date_fin']);
 $stmt->execute();
 $row4 = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// ...
-
 // Check the number of available places
 $sqlSS = "SELECT COUNT(*) AS count FROM inscriptions WHERE id_session = :id_session";
 $stmt = $database->prepare($sqlSS);
@@ -257,76 +255,12 @@ if (isset($_POST['Join'])) {
                 <h4>Date Debut: <?php echo $result['date_debut']; ?> </h4>
                 <h4>Date Fin: <?php echo $result['date_fin']; ?> </h4>
                 <h6>Places: <?php echo $result['places']; ?> </h6>
-                        <form method="POST">
+                       <form method="POST">
                             <input type="submit" name="Join" class="btn btn-primary" value="Join">
                         </form>
-                        <!-- <p>Maximum number of participants reached. Registration is closed.</p> -->
             </div>
         </div>
     </div>
 </div>
-
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- قاعدة عامة
-
-لجلب الأسطر التي تحتوي قيم مشتركة نضع بين الجداول الكلمة INNER JOIN
-و التي يمكنك اختصارها بالكلمة JOIN
-فقط.
-لتحديد ما هو الحقل المشترك بين الجداول و الذي يربطهم مع بعض, نستخدم الكلمة ON -->
